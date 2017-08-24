@@ -22,9 +22,10 @@
  
   // Generate the navigation menu
   if (isset($_SESSION['username'])) {
-    echo '&#10084; <a href="viewprofile.php">View Profile</a><br />';
-    echo '&#10084; <a href="editprofile.php">Edit Profile</a><br />';
+  	echo '&#10084; <a href="editprofile.php">Edit Profile</a><br />';
     echo '&#10084; <a href="logout.php">Log Out (' . $_SESSION['username'] . ')</a>';
+    echo '&#10084; <a href="viewprofile.php">View Profile</a><br />';
+    
   }
   else {
     echo '&#10084; <a href="login.php">Log In</a><br />';
