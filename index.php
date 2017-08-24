@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
   session_start();
 
   // If the session vars aren't set, try to set them with a cookie
