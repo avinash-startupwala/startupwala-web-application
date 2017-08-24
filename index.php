@@ -14,7 +14,6 @@
 <html>
 <head>
   <title>Welcome to Startupwala</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
   <h3>Welcome to Startupwala!</h3>
