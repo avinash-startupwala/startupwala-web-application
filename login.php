@@ -16,7 +16,7 @@
       // Connect to the database
 
       // Grab the user-entered log-in data
-      $user_username = $_POST['username']);
+      $user_username = $_POST['username'];
       $user_password = trim($_POST['password']);
     $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
