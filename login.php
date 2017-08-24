@@ -14,11 +14,11 @@
   if (!isset($_SESSION['user_id'])) {
     if (isset($_POST['submit'])) {
       // Connect to the database
-    $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
       // Grab the user-entered log-in data
-      $user_username = $herokupostgrsdatabse->escape_value(trim($_POST['username']));
-      $user_password = $herokupostgrsdatabse->escape_value(trim($_POST['password']));
+      $user_username = $_POST['username']);
+      $user_password = trim($_POST['password']);
+    $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
       if (!empty($user_username) && !empty($user_password)) {
         // Look up the username and password in the database
