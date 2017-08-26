@@ -49,7 +49,7 @@ require_once("heroku_postgres_database.php");
       if (!empty($first_name) && !empty($last_name) && !empty($city) && !empty($phone) && !empty($lookingfor)) {
         // Only set the picture column if there is a new picture
      
-          $update_user_data_query = "UPDATE registered_users SET first_name = '$first_name', last_name = '$last_name', city = '$city', " .
+          $update_user_data_query = "UPDATE registered_users SET first_name = '$first_name', last_name = '$last_name', " .
             " phone = '$phone', city = '$city', looking_for = '$lookingfor' WHERE user_id = '" . $_SESSION['user_id'] . "'";
        
        
@@ -77,7 +77,7 @@ $update_user_data_result =  $herokupostgrsdatabse->query($update_user_data_query
       $city = $row['city'];
       $phone = $row['phone'];
       $lookingfor = $row['looking_for'];
-     
+
     }
     else {
       echo '<p class="error">There was a problem accessing your profile.</p>';
