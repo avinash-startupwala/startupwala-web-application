@@ -22,9 +22,8 @@ echo "<br>";
     echo '&#10084; <a href="logout.php">Log Out (' . $_SESSION['username'] . ')</a>';
   }
   else {
-    echo '&#10084; <a href="login.php">Log In</a><br />';
-    echo '&#10084; <a href="signup.php">Sign Up</a><br />';
-    echo '&#10084; <a href="admin.php">Startupwala Admin login</a><br />';
+    echo '&#10084; <a href="https://startupwala.herokuapp.com/login.php">Log In</a><br />';
+    echo '&#10084; <a href="https://startupwala.herokuapp.com/signup.php">Sign Up</a><br />';
 
   }
 ?>
