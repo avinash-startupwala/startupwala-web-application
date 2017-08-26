@@ -2,7 +2,7 @@
   require_once('heroku_postgres_database.php');
 
 
-
+    
 
   // Start the session
   session_start();
@@ -16,15 +16,17 @@
       // Connect to the database
 
       // Grab the user-entered log-in data
-      $user_username = $_POST['username'];
-      $user_password = trim($_POST['password']);
+    
     $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
+        $user_username =  $herokupostgrsdatabse->escape_value(trim($_POST['username']));
+
+      $user_password =  $herokupostgrsdatabse->escape_value(trim($_POST['password']));
+      
       if (!empty($user_username) && !empty($user_password)) {
         // Look up the username and password in the database
         $query = "SELECT user_id, email FROM registered_users WHERE email = '$user_username' AND password = '$user_password'";
         
-        $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
         $data = $herokupostgrsdatabse->query($query);
 
@@ -35,8 +37,8 @@
           $_SESSION['username'] = $row['username'];
           setcookie('user_id', $row['user_id'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
           setcookie('username', $row['username'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
-          $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/index.php';
-          header('Location: ' . $home_url);
+          $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/viewprofile.php';
+          header('Location: ' . $home_url."?q={$user_username}");
         }
         else {
           // The username/password are incorrect so set an error message
