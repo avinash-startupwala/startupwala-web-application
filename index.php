@@ -1,4 +1,10 @@
 <?php
+  error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+echo "<h1>WELCOME TO STARTUPWALA</h1> \n";
+echo "<br>";
+echo "<br>";
+
   session_start();
 
   // If the session vars aren't set, try to set them with a cookie
@@ -8,32 +14,17 @@
       $_SESSION['username'] = $_COOKIE['username'];
     }
   }
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Welcome to Startupwala</title>
-</head>
-<body>
-  <h3>Welcome to Startupwala!</h3>
-
-<?php
- 
   // Generate the navigation menu
-  if (isset($_SESSION['username']) || isset($_POST['username'])) {
-  	echo '&#10084; <a href="editprofile.php">Edit Profile</a><br />';
+  if (isset($_SESSION['username'])) {
+    echo "\n";
+    echo '&#10084; <a href="status.php">View Status</a><br />';
+    // echo '&#10084; <a href="editprofile.php">Edit Profile</a><br />';
     echo '&#10084; <a href="logout.php">Log Out (' . $_SESSION['username'] . ')</a>';
-    echo '&#10084; <a href="viewprofile.php">View Profile</a><br />';
-    
   }
   else {
     echo '&#10084; <a href="login.php">Log In</a><br />';
-    echo '&#10084; <a href="signup.php">Sign Up</a>';
+    echo '&#10084; <a href="signup.php">Sign Up</a><br />';
+    echo '&#10084; <a href="admin.php">Startupwala Admin login</a><br />';
+
   }
-
-
 ?>
-
-</body> 
-</html>
