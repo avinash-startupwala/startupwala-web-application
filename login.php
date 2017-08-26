@@ -37,7 +37,7 @@
           $_SESSION['username'] = $row['email'];
           setcookie('user_id', $row['user_id'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
           setcookie('username', $row['email'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
-          $home_url = 'https://startupwala.herokuapp.com' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/viewprofile.php';
+          $home_url = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/viewprofile.php';
           header('Location: ' . $home_url."?q={$user_username}");
         }
         else {
