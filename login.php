@@ -33,9 +33,9 @@ require_once("heroku_postgres_database.php");
           // The log-in is OK so set the user ID and username session vars (and cookies), and redirect to the home page
           $row = $herokupostgrsdatabse->fetch_array($data);
           $_SESSION['user_id'] = $row['user_id'];
-          $_SESSION['username'] = $row['username'];
+          $_SESSION['username'] = $row['email'];
           setcookie('user_id', $row['user_id'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
-          setcookie('username', $row['username'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
+          setcookie('username', $row['email'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
           $home_url = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/index.php';
           header('Location: ' . $home_url);
         }
