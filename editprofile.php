@@ -102,7 +102,7 @@ $update_user_data_result =  $herokupostgrsdatabse->query($update_user_data_query
       <label for="phone">Phone:</label>
       <input type="text" id="phone" name="phone" value="<?php if (!empty($phone)) echo $phone; ?>" /><br />
   
-  <label for="looking_for">Lokking For:</label>
+  <label for="looking_for">Looking For:</label>
       <input type="text" id="looking_for" name="looking_for" value="<?php if (!empty($looking_for)) echo $looking_for; ?>" /><br />
 
     </fieldset>
