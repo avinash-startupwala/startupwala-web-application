@@ -60,12 +60,28 @@ $fetch_user_data=  "SELECT  first_name, last_name, email, phone,city, looking_fo
 			   {
 
 			   	 print "\n";
-
-
+				echo "First Name : ".$row['first_name'];
+				
+			echo "Last Name : ".$row['last_name'];
+		echo "Email : ".$row['email'];
+		echo "Phone : ".$row['phone'];
+			echo "City : ".$row['city'];
+			echo "Looking For : ".$row['looking_for'];
 			   	 ?>
 			   	 <pre>
 			   	 <?php
-			 		print_r($row);
+			 		echo "First Name : ".$row['first_name'];
+				echo "<br>";
+			echo "Last Name : ".$row['last_name'];
+			echo "<br>";
+		echo "Email : ".$row['email'];
+			echo "<br>";
+		echo "Phone : ".$row['phone'];
+			echo "<br>";
+			echo "City : ".$row['city'];
+			echo "<br>";
+			echo "Looking For : ".$row['looking_for'];
+		//print_r($row);
 			   	 ?>
 			   	 </pre>
 			   	 <?php
